@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import BlogCard from '../../components/BlogCard';
+ 
+import BlogCard from '../../components/molecules/BlogCard';
 import { useGetsBlogQuery } from '../../redux/features/blog/blogApi';
-import { TBlog } from '../../redux/features/favoriteBlog/favoriteBlogSlice';
+import { TBlog } from '../../types/types';
 
 const HomePage = () => {
 	const { data: blogs, isLoading } = useGetsBlogQuery();

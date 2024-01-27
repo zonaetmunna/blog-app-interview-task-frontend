@@ -1,9 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../layout/MainLayout';
-import HomePage from '../pages/homePage/HomePage';
-import BlogDetailsPage from '../pages/BlogDetailsPage/BlogDetailsPage';
+const HomePage = lazy(() => import('../pages/homePage/HomePage'));
+const BlogDetailsPage = lazy(() => import('../pages/BlogDetailsPage/BlogDetailsPage'));
 import Error from '../layout/Error';
-import FavoriteBlogPage from '../pages/favoriteBlogPage/FavoriteBlogPage';
+const FavoriteBlogPage = lazy(() => import('../pages/favoriteBlogPage/FavoriteBlogPage'));
 
 const router = createBrowserRouter([
 	{

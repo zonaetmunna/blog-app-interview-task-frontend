@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import {
-	TComment,
 	useGetCommentsForBlogQuery,
 	useGetSingleBlogQuery,
 } from '../../redux/features/blog/blogApi';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { TBlog, toggleFavorite } from '../../redux/features/favoriteBlog/favoriteBlogSlice';
+import { toggleFavorite } from '../../redux/features/favoriteBlog/favoriteBlogSlice';
 import { useEffect, useState } from 'react';
 import { BookmarkIcon, BookmarkSlashIcon } from '@heroicons/react/16/solid';
+import { TBlog, TComment } from '../../types/types';
 
 const BlogDetailsPage = () => {
 	const { id } = useParams();

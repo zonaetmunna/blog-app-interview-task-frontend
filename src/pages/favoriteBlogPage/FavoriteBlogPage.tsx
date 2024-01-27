@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { TBlog, removeFavorite } from '../../redux/features/favoriteBlog/favoriteBlogSlice';
+import { removeFavorite } from '../../redux/features/favoriteBlog/favoriteBlogSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { BookmarkSlashIcon } from '@heroicons/react/16/solid';
+import { TBlog } from '../../types/types';
 
 const FavoriteBlogPage = () => {
 	const dispatch = useAppDispatch();

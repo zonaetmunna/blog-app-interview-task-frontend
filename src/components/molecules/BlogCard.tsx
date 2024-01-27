@@ -1,5 +1,5 @@
-import { TBlog } from '../redux/features/favoriteBlog/favoriteBlogSlice';
 import { Link } from 'react-router-dom';
+import { TBlog } from '../../types/types';
 
 const BlogCard = ({ blog }: { blog: TBlog }) => {
 	return (
