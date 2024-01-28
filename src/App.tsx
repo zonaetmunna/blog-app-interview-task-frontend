@@ -6,6 +6,7 @@ import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Suspense } from 'react';
 import Loading from './components/atoms/Loading';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<PersistGate loading={null} persistor={persistor}>
 					<Suspense fallback={<Loading />}>
 						<RouterProvider router={router} />
+						<Toaster />
 					</Suspense>
 				</PersistGate>
 			</Provider>

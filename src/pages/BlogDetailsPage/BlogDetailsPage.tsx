@@ -8,6 +8,8 @@ import { toggleFavorite } from '../../redux/features/favoriteBlog/favoriteBlogSl
 import { useEffect, useState } from 'react';
 import { BookmarkIcon, BookmarkSlashIcon } from '@heroicons/react/16/solid';
 import { TBlog, TComment } from '../../types/types';
+import Button from '../../components/atoms/Button';
+import toast from 'react-hot-toast';
 
 const BlogDetailsPage = () => {
 	const { id } = useParams();
@@ -34,6 +36,11 @@ const BlogDetailsPage = () => {
 	const handleToggleFavorite = () => {
 		dispatch(toggleFavorite(blog as TBlog));
 		setIsFavorite(!isFavorite);
+		if (isFavorite) {
+			toast.success('Blog removed from favorites!');
+		} else {
+			toast.success('Blog added to favorites!');
+		}
 	};
 
 	return (
@@ -41,7 +48,8 @@ const BlogDetailsPage = () => {
 			<div className='container mx-auto '>
 				<div className='flex items-center justify-start space-x-10'>
 					<h1 className='text-3xl font-bold'>{blog?.title}</h1>
-					<button
+					<Button
+						type='button'
 						className={`mt-4 px-4 py-2 rounded-md ${
 							isFavorite ? 'bg-yellow-500' : 'bg-gray-500'
 						} text-white font-semibold`}
@@ -51,14 +59,13 @@ const BlogDetailsPage = () => {
 						) : (
 							<BookmarkIcon className='h-6 w-6' />
 						)}
-					</button>
+					</Button>
 				</div>
 
 				{blogData && (
 					<div className='bg-white shadow p-6 rounded-lg'>
 						<p className='text-gray-800'>{blog?.body}</p>
 
-						{/* Comments section */}
 						{comments && (
 							<div className='mt-8'>
 								<h3 className='text-xl font-semibold mb-4'>Comments</h3>

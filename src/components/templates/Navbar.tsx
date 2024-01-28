@@ -8,7 +8,7 @@ const Navbar = () => {
 					<Link to='/' className='text-white text-2xl font-bold'>
 						My Blog App
 					</Link>
-					<ul className='flex space-x-4'>
+					<ul className='flex space-x-4 font-semibold'>
 						<li>
 							<Link to='/' className='text-white hover:text-gray-300'>
 								Home
