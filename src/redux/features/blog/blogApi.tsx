@@ -40,7 +40,7 @@ const blogApi = baseApi.injectEndpoints({
 				url: `/blog/${id}/comments`,
 				method: 'GET',
 			}),
-			providesTags: ['comment'],
+			providesTags: ['comment', 'blog'],
 		}),
 	}),
 });

@@ -1,8 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { TBlog } from '../../../types/types';
 
-
-
 type TInitialState = {
 	favoritePosts: TBlog[];
 };
